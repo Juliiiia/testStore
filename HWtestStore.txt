@@ -1,0 +1,39 @@
+describe('Sign Up', () => {
+  it('passes', () => {
+    cy.visit('https://automationteststore.com/');
+    cy.get('#customer_menu_top > li > a').click();
+    cy.get('[title="Continue"]').click();
+    cy.get('[name="firstname"]').type('Yuliia');
+    cy.get('[name="lastname"]').type('Buchynska');
+    cy.get('[id="AccountFrm_email"]').type('buchynskaya.julia@gmail.com');
+    cy.get('[name="telephone"]').type('+380984757308');
+    cy.get('[id="AccountFrm_fax"]').type('none');
+    cy.get('[id="AccountFrm_company"]').type('Genesis Tech');
+    cy.get('[id="AccountFrm_address_1"]').type("Olenivs'ka 3 str.");
+    cy.get('[id="AccountFrm_address_2"]').type('none');
+    cy.get('[id="AccountFrm_country_id"]').select('Ukraine')
+    cy.get('[id="AccountFrm_city"]').type('Kyiv');
+    cy.get('[id="AccountFrm_zone_id"]').select('Kyiv');
+    cy.get('[id="AccountFrm_postcode"]').type('222222');
+    cy.get('[id="AccountFrm_loginname"]').type('Julia');
+    cy.get('[id="AccountFrm_password"]').type('123456');
+    cy.get('[id="AccountFrm_confirm"]').type('123456');
+    cy.get('[id="AccountFrm_newsletter0"]').click();
+    cy.get('[id="AccountFrm_agree"]').click();
+    cy.get('[title="Continue"]').click();
+    
+  })
+  })
+
+  describe('Sign In', () => {
+    it('passes', () => {
+    cy.visit('https://automationteststore.com/');
+    cy.get('#customer_menu_top > li > a').click();
+    cy.get('#loginFrm_loginname').type('Julia');
+    cy.get('#loginFrm_password').type('123456');
+    cy.get('[title="Login"]').click();
+
+  })
+})
+
+
